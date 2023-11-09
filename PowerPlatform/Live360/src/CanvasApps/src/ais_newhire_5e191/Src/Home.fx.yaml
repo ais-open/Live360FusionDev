@@ -1,0 +1,709 @@
+Home As screen:
+    Fill: |-
+        =ColorValue("#FAF9F8")
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: |-
+        =ClearCollect(colProgressStatus, Table(
+            { ItemKey:"1", ItemLabel:"Step 1: Employee Details", ItemState:"Current" },
+            { ItemKey:"2", ItemLabel:"Step 2: Payroll Setup", ItemState:"NotStarted" },
+            { ItemKey:"3", ItemLabel:"Step 3: Background Check", ItemState:"NotStarted" }
+        ));
+        NewForm(frmContact)
+
+    conHomeRoot As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =4
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        conHeader As groupContainer.verticalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =75
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =50
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =1
+
+            lblNewHireTitle As Label:
+                AutoHeight: =true
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                FontSize: =16
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                Text: ="New Hire Onboarding"
+                TextRole: ='Label.TextRole'.Heading1
+                Width: =320
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            lblNewHireSubtitle As Label:
+                AlignInContainer: =AlignInContainer.Stretch
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                Text: ="Let's work to get the new team member setup for success!"
+                Width: =320
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        conProcessFieldSplit As groupContainer.horizontalAutoLayoutContainer:
+            LayoutGap: =24
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =16
+            PaddingLeft: =8
+            PaddingRight: =16
+            PaddingTop: =8
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            conLeft As groupContainer.verticalAutoLayoutContainer:
+                FillPortions: =0.3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =4
+                PaddingLeft: =4
+                PaddingRight: =4
+                PaddingTop: =4
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =2
+
+                conProcess As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =18
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =18
+                    PaddingTop: =18
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    ZIndex: =3
+
+                    TextCanvas1 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =18
+                        Text: ="Progress"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "comProcessSteps As 'SubwayNav (1.1.29) Preview'.pcfdataset":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =200
+                        Items: |-
+                            =/*Table(
+                                { ItemKey:"1", ItemLabel:"Step 1: Employee Details", ItemState:"Current" },
+                                { ItemKey:"2", ItemLabel:"Step 2: Payroll Setup", ItemState:"NotStarted" },
+                                { ItemKey:"3", ItemLabel:"Step 3: Background Check", ItemState:"NotStarted" }
+                            )*/
+                            colProgressStatus
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        OnSelect: |-
+                            =/*Switch(Self.Selected.ItemKey,
+                            "1",
+                            Patch(colProgressStatus, LookUp(colProgressStatus, ItemKey = "1"),
+                                { ItemKey:"1", ItemLabel:"Step 1: Employee Details", ItemState:"Current" }
+                                )
+                            );*/
+                            UpdateContext({_SelectedStep: Self.Selected.ItemKey});
+                                
+                        Width: =200
+                        X: =0
+                        Y: =40
+                        ZIndex: =2
+
+            conRight As groupContainer.verticalAutoLayoutContainer:
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =4
+                PaddingLeft: =4
+                PaddingRight: =4
+                PaddingTop: =4
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =3
+
+                conEmployeeDetails As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =295
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =18
+                    PaddingRight: =32
+                    PaddingTop: =18
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Visible: =LookUp(comProcessSteps.Steps, ItemKey = "3933").ItemState = "Current"
+                    ZIndex: =1
+
+                    TextCanvas1_1 As Text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =18
+                        Text: ="1. Employee Details"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    frmContact As form.PowerApps_CoreControls_Form:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        DataSource: =Contacts
+                        DefaultMode: =FormMode.New
+                        FillPortions: =0
+                        Height: =250
+                        Item: =varSubmittedRecord
+                        LayoutMinHeight: =250
+                        LayoutMinWidth: =400
+                        NumberOfColumns: =1
+                        OnFailure: |-
+                            =Set(varSubmittedRecord, Self.LastSubmit);
+                            Patch(colProgressStatus, {ItemKey: "1"}, {ItemState: "Error"})
+                        OnSuccess: |-
+                            =Set(varSubmittedRecord, Self.LastSubmit);
+                            Patch(colProgressStatus, {ItemKey: "1"}, {ItemState: "Completed"})
+                        UseFluentV9Cards: =true
+                        Width: =550
+                        ZIndex: =2
+
+                        "'First Name_DataCard1' As typedDataCard.pcfCoreTextualEditCard":
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="firstname"
+                            Default: =ThisItem.'First Name'
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@Contacts],DataSourceInfo.DisplayName,"firstname")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =70
+                            MaxLength: =DataSourceInfo([@Contacts], DataSourceInfo.MaxLength, "firstname")
+                            Required: =false
+                            Update: =DataCardValue4.Value
+                            Width: =1051
+                            WidthFit: =true
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                            DataCardKey4 As Label:
+                                AutoHeight: =true
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =22
+                                Text: =Parent.DisplayName
+                                Tooltip: =Parent.DisplayName
+                                VerticalAlignment: =VerticalAlign.Bottom
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =10
+                                ZIndex: =1
+
+                            "DataCardValue4 As 'Text box'":
+                                AccessibleLabel: =Parent.DisplayName
+                                ColorBackground: =
+                                ColorText: =
+                                DisplayMode: =Parent.DisplayMode
+                                FontSize: =10.5
+                                Height: =32
+                                Mode: ="SingleLine"
+                                Required: =Parent.Required
+                                Tooltip: =Parent.DisplayName
+                                Value: =Parent.Default
+                                Width: =Parent.Width - 48
+                                X: =24
+                                Y: =DataCardKey4.Y + DataCardKey4.Height + 4
+                                ZIndex: =2
+
+                            ErrorMessage3 As Label:
+                                AutoHeight: =true
+                                Color: =Color.Red
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =30
+                                Text: =Parent.Error
+                                Tooltip: =Parent.Error
+                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =DataCardValue4.Y + DataCardValue4.Height
+                                ZIndex: =3
+
+                            StarVisible3 As Label:
+                                Alignment: =Align.Center
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                X: =0
+                                Y: =DataCardKey4.Y
+                                ZIndex: =4
+
+                        "'Last Name_DataCard1' As typedDataCard.pcfCoreTextualEditCard":
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="lastname"
+                            Default: =ThisItem.'Last Name'
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@Contacts],DataSourceInfo.DisplayName,"lastname")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =70
+                            MaxLength: =DataSourceInfo([@Contacts], DataSourceInfo.MaxLength, "lastname")
+                            Required: =true
+                            Update: =DataCardValue5.Value
+                            Width: =1051
+                            WidthFit: =true
+                            X: =0
+                            Y: =1
+                            ZIndex: =1
+
+                            DataCardKey5 As Label:
+                                AutoHeight: =true
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =22
+                                Text: =Parent.DisplayName
+                                Tooltip: =Parent.DisplayName
+                                VerticalAlignment: =VerticalAlign.Bottom
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =10
+                                ZIndex: =1
+
+                            "DataCardValue5 As 'Text box'":
+                                AccessibleLabel: =Parent.DisplayName
+                                ColorBackground: =
+                                ColorText: =
+                                DisplayMode: =Parent.DisplayMode
+                                FontSize: =10.5
+                                Height: =32
+                                Mode: ="SingleLine"
+                                Required: =Parent.Required
+                                Tooltip: =Parent.DisplayName
+                                Value: =Parent.Default
+                                Width: =Parent.Width - 48
+                                X: =24
+                                Y: =DataCardKey5.Y + DataCardKey5.Height + 4
+                                ZIndex: =2
+
+                            ErrorMessage4 As Label:
+                                AutoHeight: =true
+                                Color: =Color.Red
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =30
+                                Text: =Parent.Error
+                                Tooltip: =Parent.Error
+                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =DataCardValue5.Y + DataCardValue5.Height
+                                ZIndex: =3
+
+                            StarVisible4 As Label:
+                                Alignment: =Align.Center
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                X: =0
+                                Y: =DataCardKey5.Y
+                                ZIndex: =4
+
+                        Email_DataCard1 As typedDataCard.pcfCoreTextualEditCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="emailaddress1"
+                            Default: =ThisItem.Email
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@Contacts],DataSourceInfo.DisplayName,"emailaddress1")
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =70
+                            MaxLength: =DataSourceInfo([@Contacts], DataSourceInfo.MaxLength, "emailaddress1")
+                            Required: =false
+                            Update: =DataCardValue2.Value
+                            Width: =1051
+                            WidthFit: =true
+                            X: =0
+                            Y: =2
+                            ZIndex: =2
+
+                            DataCardKey2 As Label:
+                                AutoHeight: =true
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =22
+                                Text: =Parent.DisplayName
+                                Tooltip: =Parent.DisplayName
+                                VerticalAlignment: =VerticalAlign.Bottom
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =10
+                                ZIndex: =1
+
+                            "DataCardValue2 As 'Text box'":
+                                AccessibleLabel: =Parent.DisplayName
+                                ColorBackground: =
+                                ColorText: =
+                                DisplayMode: =Parent.DisplayMode
+                                FontSize: =10.5
+                                Height: =32
+                                Mode: ="SingleLine"
+                                Required: =Parent.Required
+                                Tooltip: =Parent.DisplayName
+                                Value: =Parent.Default
+                                Width: =Parent.Width - 48
+                                X: =24
+                                Y: =DataCardKey2.Y + DataCardKey2.Height + 4
+                                ZIndex: =2
+
+                            ErrorMessage1 As Label:
+                                AutoHeight: =true
+                                Color: =Color.Red
+                                DisplayMode: =DisplayMode.Edit
+                                FontSize: =9
+                                Height: =30
+                                Text: =Parent.Error
+                                Tooltip: =Parent.Error
+                                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =Parent.Width - 48
+                                Wrap: =true
+                                X: =24
+                                Y: =DataCardValue2.Y + DataCardValue2.Height
+                                ZIndex: =3
+
+                            StarVisible1 As Label:
+                                Alignment: =Align.Center
+                                Color: =
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =30
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                X: =0
+                                Y: =DataCardKey2.Y
+                                ZIndex: =4
+
+                    ButtonCanvas1 As Button:
+                        AlignInContainer: =AlignInContainer.End
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =0
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =SubmitForm(frmContact);
+                        Text: ="Next"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                    Button2_1 As Button:
+                        BorderColor: =
+                        DisabledBorderColor: =
+                        DisabledFillColor: =
+                        DisabledTextColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: =
+                        Height: =32
+                        HoverBorderColor: =
+                        HoverFillColor: =
+                        HoverTextColor: =
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =SubmitForm(frmContact);
+                        PressedBorderColor: =
+                        PressedFillColor: =
+                        PressedTextColor: =
+                        TextColor: =
+                        Width: =96
+                        X: =541
+                        Y: =40
+                        ZIndex: =4
+
+                conEmployeeDetails_1 As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =295
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =18
+                    PaddingRight: =32
+                    PaddingTop: =18
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Visible: =LookUp(comProcessSteps.Steps, ItemKey = "3934").ItemState = "Current"
+                    ZIndex: =2
+
+                    TextCanvas1_2 As Text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =18
+                        Text: ="2. Payroll Setup"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    ButtonCanvas1_1 As Button:
+                        AlignInContainer: =AlignInContainer.End
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =0
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Next"
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                    DataCardKey4_1 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =320
+                        Text: ="Salary Amount"
+                        Tooltip: =
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =4
+
+                    "DataCardValue4_1 As 'Text box'":
+                        AccessibleLabel: =
+                        ColorBackground: =
+                        ColorText: =
+                        DisplayMode: =Parent.DisplayMode
+                        FontSize: =10.5
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =320
+                        Mode: ="SingleLine"
+                        Required: =
+                        Tooltip: =
+                        Value: =
+                        Width: =200
+                        X: =24
+                        Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 4
+                        ZIndex: =5
+
+                conEmployeeDetails_2 As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.Light
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =295
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =18
+                    PaddingRight: =32
+                    PaddingTop: =18
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Visible: |-
+                        =//_SelectedStep = "3"
+                        LookUp(comProcessSteps.Steps, ItemKey = "3935").ItemState = "Current"
+                    ZIndex: =3
+
+                    TextCanvas1_3 As Text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Size: =18
+                        Text: ="3. Background Check"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "CommandBar1 As 'Fluent Command Bar (1.1.29)'.pcfdataset":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =45
+                        Items: |-
+                            =Table(
+                                {
+                                    ItemKey: "new",
+                                    ItemDisplayName: "New",
+                                    ItemIconName: "Add"
+                                },{
+                                    ItemKey: "refresh",
+                                    ItemDisplayName: "Refresh",
+                                    ItemIconName: "refresh"
+                                }
+                                
+                            )
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        OnSelect: |-
+                            =Switch(
+                                Self.Selected.ItemDisplayName,
+                                "New",
+                                Patch('Background Checks', Defaults('Background Checks'), {IsSafe: 'IsSafe (Background Checks)'.No, 'Related Person': varSubmittedRecord}),
+                                "Refresh",
+                                Refresh('Background Checks');,
+                                false
+                            );
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    "PowerAppsOneGrid2 As 'Table (Dataverse only)'.pcfdataset":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        Items: =Filter('Background Checks', 'Related Person'.Contact = varSubmittedRecord.Contact)
+                        LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                        Name1 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Name"
+                            FieldName: ="ais_name"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =6
+
+                        "'Created On1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Created On"
+                            FieldName: ="createdon"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Order: =2
+                            ZIndex: =7
+
+                        "'Background Check1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Background Check"
+                            FieldName: ="ais_backgroundcheckid"
+                            FieldType: ="g"
+                            FieldVariantName: ="textualColumn"
+                            Order: =3
+                            ZIndex: =8
+
+                        IsSafe1 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="IsSafe"
+                            FieldName: ="ais_issafe"
+                            FieldType: ="l"
+                            FieldVariantName: ="textualColumn"
+                            Order: =4
+                            ZIndex: =9
+
+                        "'Modified On1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Modified On"
+                            FieldName: ="modifiedon"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Order: =5
+                            ZIndex: =10
+
+                        "'Modified By1' As pcfDataField":
+                            FieldDisplayName: ="Modified By"
+                            FieldName: ="modifiedby"
+                            FieldType: ="E"
+                            FieldVariantName: ="complexTypeColumn"
+                            Order: =6
+                            ZIndex: =11
+
+    Button2 As Button:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnSelect: =ClearCollect(colSteps, comProcessSteps.Steps);
+        Width: =96
+        X: =541
+        Y: =40
+        ZIndex: =3
+

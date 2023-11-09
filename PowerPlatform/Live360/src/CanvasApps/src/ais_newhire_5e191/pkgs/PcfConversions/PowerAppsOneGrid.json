@@ -1,0 +1,20 @@
+{
+  "Name": "PowerAppsOneGrid",
+  "PcfConversions": [
+    {
+      "Action": [
+        {
+          "Name": "BasePaletteColor",
+          "Type": "add"
+        },
+        {
+          "Name": "AccessibleLabel",
+          "Type": "add"
+        }
+      ],
+      "From": "1.0.103",
+      "To": "1.0.104"
+    }
+  ],
+  "Version": "1.0.104"
+}
