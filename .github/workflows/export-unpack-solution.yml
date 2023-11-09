@@ -1,125 +1,78 @@
-name: Export unpack and commit the solution
-run-name: Getting ${{ github.event.inputs.solution_name }} solution from environment ${{ github.event.inputs.environment_url }} environment and committing
+name: export-and-branch-solution
+# Export solution from DEV environment
+#  unpack it and prepare, commit and push a git branch with the changes
+
 on:
   workflow_dispatch:
     inputs:
+      # Change this value
       solution_name:
-        description: "name of the Solution in Dataverse environment"
+        description: 'name of the solution to worked on from Power Platform'
         required: true
-        default: yoursolutionname
-      # environment_id:
-      #   description: "GUID of your Dataverse environment"
-      #   required: true
-      #   default: "GUID-OF-YOUR-ENVIRONMENT"
-      environment_url:
-        description: "http endpoint of your Dataverse environment"
+        default: Live360
+       #Do Not change these values
+      solution_exported_folder:
+        description: 'folder name for staging the exported solution *do not change*'
         required: true
-        default: "https://[your-env].crm.dynamics.com"
-      source_branch:
-        description: "source branch"
+        default: out/exported/
+      solution_folder:
+        description: 'staging the unpacked solution folder before check-in *do not change*'
         required: true
-        default: main
-      branch_to_create:
-        description: "branch to create"
-        required: false
-      commit_message:
-        description: "message to provide for the commit"
-        required: true
-      allow_empty_commit:
-        description: "allow an empty commit"
-        required: true
-        default: 'false'
-  pull_request:
+        default: out/solutions/
+      solution_target_folder: 
+       description: 'folder name to be created and checked in *do not change*'
+       required: true
+       default: PowerPlatform/solutions/
+env:
+#edit your values here
+  ENVIRONMENT_URL: 'https://ais-live360-dev.crm.dynamics.com'
+  CLIENT_ID: 'a06d95e6-597b-4081-90b2-328f30455e84'
+  TENANT_ID: '1b37c04e-260e-4189-a11b-0b8609ed3df0'
 permissions:
   contents: write
 jobs:
-  export-unpack-commit:
-    runs-on: ubuntu-latest
+  export-from-dev:
+    runs-on: windows-latest
+    # or you can say runs-on: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 1
 
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
 
-      - if: ${{ false }} # this will never run, but will force powerplatform-actions to download
-        name: Who Am I
-        uses: microsoft/powerplatform-actions/who-am-i@latest
-        with:
-          app-id: ${{ secrets.CLIENT_ID }}
-          client-secret: ${{ secrets.POWERPLATFORMSPN }}
-          tenant-id: ${{ secrets.TENANT_ID }}
-          environment-url: ${{ github.event.inputs.environment_url}}
+    - name: who-am-i action
+      uses: microsoft/powerplatform-actions/who-am-i@v0
+      with:
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: ${{env.TENANT_ID}}
 
-      - name: create or checkout git branch
-        if: github.event.inputs.branch_to_create != ''
-        run: |
-          $branchToFind = "${{ github.event.inputs.branch_to_create }}"
-          $branches = git branch -a
-          if ([System.String]::Join("",$branches).Contains($branchToFind)) {
-            echo "checking out $branchToFind"
-            git checkout  $branchToFind
-            git pull
-          }
-          else {
-            git init
-            git checkout -b ${{ github.event.inputs.branch_to_create }} ${{ github.event.inputs.source_branch }}
-          }
-      # We need to use pac directly.
-      # So we set the path to pac that ships with the Actions
-     
 
-      # Runs a set of commands using the runners shell
-      - name: export-solution action
-        uses: microsoft/powerplatform-actions/export-solution@v0
-        with:
-            environment-url: ${{ github.event.inputs.environment_url}}
-            app-id: ${{secrets.CLIENT_ID}}
-            client-secret: ${{ secrets.PowerPlatformSPN }}
-            tenant-id: ${{secrets.TENANT_ID}}
-            solution-name: ${{ github.event.inputs.solution_name }}
-            solution-output-file: ${{ github.event.repository.name }}/${{ github.event.inputs.solution_name }}_unmanaged.zip
-            overwrite: true
+    - name: export-solution action
+      uses: microsoft/powerplatform-actions/export-solution@v0
+      with:
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: ${{env.TENANT_ID}}
+        solution-name: ${{ github.event.inputs.solution_name }}
+        solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
 
-      - name: unpack-solution action
-        uses: microsoft/powerplatform-actions/unpack-solution@v0
-        with:
-          solution-file: ${{ github.event.repository.name }}/${{ github.event.inputs.solution_name }}_unmanaged.zip
-          solution-folder: ${{ github.event.repository.name }}/${{ github.event.inputs.solution_name }}
-          solution-type: 'Unmanaged'
-          process-canvas-apps: true
-          overwrite-files: true
-          
-      - name: export-managed-solution
-        uses: microsoft/powerplatform-actions/export-solution@v0
-        with:
-            environment-url: ${{ github.event.inputs.environment_url}}
-            app-id: ${{secrets.CLIENT_ID}}
-            client-secret: ${{ secrets.PowerPlatformSPN }}
-            tenant-id: ${{secrets.TENANT_ID}}
-            solution-name: ${{ github.event.inputs.solution_name }}
-            solution-output-file: ${{ github.event.repository.name }}/${{ github.event.inputs.solution_name }}_managed.zip
-            overwrite: true
-            managed: true
-      
-      - name: commit changes
-        shell: pwsh
-        run: |
-          rm -rf ${{ github.event.repository.name }}/${{ github.event.inputs.solution_name }}_unmanaged.zip
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>" 
-          git pull 
-          git add --all
-          $allowEmptyCommit = [System.Convert]::ToBoolean("${{ github.event.inputs.allow_empty_commit }}")
-          if ($allowEmptyCommit) {
-            git commit -am "${{ github.event.inputs.commit_message }}" --allow-empty
-          }
-          else {
-            git pull 
-            git commit -am "${{ github.event.inputs.commit_message }}" --allow-empty
-          }
-      - name: push to ${{ github.event.inputs.source_branch }}
-        if: github.event.inputs.branch_to_create == ''
-        run: |
-          git push origin main
-      - name: push to ${{ github.event.inputs.branch_to_create }}
-        if: github.event.inputs.branch_to_create != ''
-        run: |
-          git push --set-upstream origin ${{ github.event.inputs.branch_to_create }}
+    - name: unpack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution@v0
+      with:
+        solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
+        solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
+        solution-type: 'Unmanaged'
+        overwrite-files: true
+
+    - name: branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@v0
+      with:
+        solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
+        solution-target-folder: ${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
