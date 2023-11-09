@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="IsSafeToHire">
+  <description default="IsSafeToHire">
+    <label description="IsSafeToHire" languagecode="1033" />
+  </description>
+  <displayname default="IsSafeToHire">
+    <label description="IsSafeToHire" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>IsSafeToHire</name>
+  <type>0</type>
+</customapirequestparameter>
