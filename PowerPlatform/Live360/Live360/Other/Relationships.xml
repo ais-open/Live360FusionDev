@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="ais_backgroundcheck_RelatedPerson_contact" />
+  <EntityRelationship Name="bpf_contact_ais_onboarding" />
+  <EntityRelationship Name="business_unit_ais_backgroundcheck" />
+  <EntityRelationship Name="lk_ais_backgroundcheck_createdby" />
+  <EntityRelationship Name="lk_ais_backgroundcheck_modifiedby" />
+  <EntityRelationship Name="lk_ais_onboarding_activestageid" />
+  <EntityRelationship Name="lk_ais_onboarding_createdby" />
+  <EntityRelationship Name="lk_ais_onboarding_modifiedby" />
+  <EntityRelationship Name="lk_ais_onboarding_processid" />
+  <EntityRelationship Name="organization_ais_onboarding" />
+  <EntityRelationship Name="owner_ais_backgroundcheck" />
+  <EntityRelationship Name="team_ais_backgroundcheck" />
+  <EntityRelationship Name="user_ais_backgroundcheck" />
+</EntityRelationships>

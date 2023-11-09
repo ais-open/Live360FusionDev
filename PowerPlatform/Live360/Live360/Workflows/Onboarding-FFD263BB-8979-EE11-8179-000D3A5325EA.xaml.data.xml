@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{ffd263bb-8979-ee11-8179-000d3a5325ea}" Name="Onboarding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/Onboarding-FFD263BB-8979-EE11-8179-000D3A5325EA.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>ais_onboarding</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <PrimaryEntity>Contact</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Onboarding" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{64f23ce2-372a-48c5-a120-e58c72357576}">
+      <label languagecode="1033" description="Employee Details" />
+    </steplabels>
+    <steplabels id="{13ac1529-2d2e-42e7-a67b-102405fc1b47}">
+      <label languagecode="1033" description="First Name" />
+    </steplabels>
+    <steplabels id="{322626cc-78b9-4fc4-be28-3e4b304d12c0}">
+      <label languagecode="1033" description="Last Name" />
+    </steplabels>
+    <steplabels id="{33ab9970-84b7-4a92-8926-9e20541e600d}">
+      <label languagecode="1033" description="Email" />
+    </steplabels>
+    <steplabels id="{942b7dc7-d856-4bc8-a580-c0e9d1163369}">
+      <label languagecode="1033" description="Accounting System" />
+    </steplabels>
+    <steplabels id="{796886ec-5f05-4385-9f20-a5b54d374e42}">
+      <label languagecode="1033" description="Create Payroll Account" />
+    </steplabels>
+  </labels>
+</Workflow>
