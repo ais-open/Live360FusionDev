@@ -29,6 +29,7 @@ on:
         description: "allow an empty commit"
         required: true
         default: 'false'
+  pull_request:
 permissions:
   contents: write
 jobs:
