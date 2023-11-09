@@ -1,0 +1,13 @@
+<environmentvariabledefinition schemaname="ais_FunctionEndpointUrl">
+  <description default="Endpoint address for new employee Azure Function">
+    <label description="Endpoint address for new employee Azure Function" languagecode="1033" />
+  </description>
+  <displayname default="FunctionEndpointUrl">
+    <label description="FunctionEndpointUrl" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.1</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>
