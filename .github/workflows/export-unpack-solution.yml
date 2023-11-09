@@ -22,7 +22,7 @@ on:
       solution_target_folder: 
        description: 'folder name to be created and checked in *do not change*'
        required: true
-       default: PowerPlatform/solutions/
+       default: PowerPlatform/Live360/
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://ais-live360-dev.crm.dynamics.com'
@@ -66,7 +66,7 @@ jobs:
       with:
         solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
-        solution-type: 'Unmanaged'
+        solution-type: 'Both'
         overwrite-files: true
 
     - name: branch-solution, prepare it for a PullRequest
