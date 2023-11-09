@@ -1,0 +1,118 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "ais_backgroundchecks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "ais_backgroundcheck",
+    "Name": "Background Checks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "ais_backgroundcheck_AsyncOperations": "System Jobs",
+      "ais_backgroundcheck_BulkDeleteFailures": "Bulk Delete Failures",
+      "ais_backgroundcheck_DuplicateBaseRecord": "Duplicate Records (ais_backgroundcheck_DuplicateBaseRecord)",
+      "ais_backgroundcheck_DuplicateMatchingRecord": "Duplicate Records (ais_backgroundcheck_DuplicateMatchingRecord)",
+      "ais_backgroundcheck_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "ais_backgroundcheck_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "ais_backgroundcheck_ProcessSession": "Process Sessions",
+      "ais_backgroundcheck_SyncErrors": "Sync Errors",
+      "ais_backgroundcheckid": "Background Check",
+      "ais_issafe": "IsSafe",
+      "ais_name": "Name",
+      "ais_RelatedPerson": "Related Person",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Background Checks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Background Checks (Views)",
+    "Name": "_ais_backgroundcheck_views",
+    "RelatedEntityName": "Background Checks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "12f957b3-cfc5-44dd-adfc-e78e93cc0a5c": "Background Check Advanced Find View",
+      "4d5294c8-6e41-40fd-bbfc-917108d0a5ac": "Background Check Associated View",
+      "7b203fa6-462d-4ea8-8670-f520b040c14e": "Background Check Lookup View",
+      "8bdb72e5-023d-4001-939f-340140e21ad9": "Inactive Background Checks",
+      "b2d5160c-6fd0-4dc7-9da2-18edd281e9b5": "Active Background Checks"
+    }
+  },
+  {
+    "DisplayName": "IsSafe (Background Checks)",
+    "Name": "ais_backgroundcheck_ais_issafe",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "ais_issafe",
+        "OptionSetReferenceEntityName": "Background Checks"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "ais_issafe",
+    "RelatedEntityName": "Background Checks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Background Checks)",
+    "Name": "ais_backgroundcheck_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Background Checks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Background Checks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Background Checks)",
+    "Name": "ais_backgroundcheck_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Background Checks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Background Checks",
+    "Type": "OptionSetInfo"
+  }
+]
