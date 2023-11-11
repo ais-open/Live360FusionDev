@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "ms-dotnettools.csharp",
-    "ms-vscode.vscode-node-azure-pack",
-    "ms-dotnettools.csdevkit",
-    "humao.rest-client",
-    "microsoft-isvexptools.powerplatform-vscode"
-  ]
-}

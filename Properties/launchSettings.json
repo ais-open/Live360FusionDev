@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "Live360FusionDev": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7008",
-      "launchBrowser": false
-    }
-  }
-}

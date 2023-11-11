@@ -1,3 +1,0 @@
-@url = https://live360-tommck-blah.azurewebsites.net/api/addemployee
-
-POST {{url}}?first="Abe"&last="Lincoln"
