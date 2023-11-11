@@ -8,9 +8,9 @@
 		"scope": "http",
 		"prefix": "testadd",
 		"body": [
-			"@url = ${1:https://tommck-live360.azurewebsites.net/api/addemployee}",
+			"@url = ${1:https://tommck-live360.azurewebsites.net/api/addemployee?code=XXXX}",
 			"",
-			"POST {{url}}?first=\"${2:First Name}\"&last=\"${3:Last Name}\"",
+			"POST {{url}}&first=\"${2:First Name}\"&last=\"${3:Last Name}\"",
 			"$0"
 		]
 	},
