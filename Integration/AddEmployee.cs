@@ -26,7 +26,7 @@ public class AddEmployee
     [OpenApiParameter(name: "last", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Last** parameter")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
     public IActionResult Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
+        [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
         HttpRequest req)
     {
         string first = req.Query["first"];
