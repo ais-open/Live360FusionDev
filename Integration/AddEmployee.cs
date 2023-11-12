@@ -42,7 +42,7 @@ public class AddEmployee
         var service = new EmployeeStorageService(connStr);
         var employee = service.AddEmployee(first, last);
 
-        return new OkObjectResult(employee.RowKey);
+        return new OkObjectResult("ADDED" + employee.RowKey);
     }
 }
 
