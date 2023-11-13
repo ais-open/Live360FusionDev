@@ -1,0 +1,12 @@
+{
+  "fxexpression": {
+    "@uniquename": "ais_CreatePayrollAccount",
+    "category": "0",
+    "entitylogicalname": "contact",
+    "iscustomizable": "1",
+    "name": "Create Payroll Account",
+    "parameters": "{\"InputParameter\":[],\"OutputParameter\":[]}",
+    "statecode": "0",
+    "statuscode": "1"
+  }
+}

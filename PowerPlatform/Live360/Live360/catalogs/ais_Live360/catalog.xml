@@ -1,0 +1,10 @@
+<catalog uniquename="ais_Live360">
+  <description default="Live360">
+    <label description="Live360" languagecode="1033" />
+  </description>
+  <displayname default="Live360">
+    <label description="Live360" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <name>Live360</name>
+</catalog>

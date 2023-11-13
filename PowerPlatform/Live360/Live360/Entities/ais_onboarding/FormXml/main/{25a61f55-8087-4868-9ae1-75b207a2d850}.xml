@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{25a61f55-8087-4868-9ae1-75b207a2d850}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{64f23ce2-372a-48c5-a120-e58c72357576}" name="StageStep4" locklevel="0" expanded="true" visible="false" labelid="{0004f548-e0fb-4adb-bf1d-48e45bf1a99e}">
+          <labels>
+            <label description="Employee Details" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{42b120f9-587e-9e34-97c0-030289c22ae3}" name="StageStep4_section1" labelid="{6dd33ef5-8209-4434-9726-14b8aa37d307}">
+                  <labels>
+                    <label description="Employee Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{13ac1529-2d2e-42e7-a67b-102405fc1b47}" showlabel="true" visible="true" labelid="{1a5216e3-227c-4cac-8a3a-51e8b55ed3f6}">
+                        <labels>
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_contact_ais_onboarding:firstname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="firstname" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{322626cc-78b9-4fc4-be28-3e4b304d12c0}" showlabel="true" visible="true" labelid="{2f5016c9-8731-4e46-b501-d691c4c1ac13}">
+                        <labels>
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_contact_ais_onboarding:lastname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="lastname" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{33ab9970-84b7-4a92-8926-9e20541e600d}" showlabel="true" visible="true" labelid="{a33e06d3-98dd-4231-b607-dfa95cb10891}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_contact_ais_onboarding:emailaddress1" classid="{ada2203e-b4cd-49be-9ddf-234642b43b52}" datafieldname="emailaddress1" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{942b7dc7-d856-4bc8-a580-c0e9d1163369}" name="StageStep12" locklevel="0" expanded="true" visible="false" labelid="{2466fae3-b5f9-4d90-ae90-52a1b6d101f2}">
+          <labels>
+            <label description="Accounting System" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showbar="false" columns="1" id="{d632b383-6ef2-721f-b081-fc195f42521b}" name="StageStep12_section1" labelid="{a091ff81-89a0-4760-ac46-6c69669b4bfb}">
+                  <labels>
+                    <label description="Accounting System" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{55508b0d-6aa9-4b24-b73d-6888de4e08a5}" showlabel="true" visible="true" labelid="{10b9ee0f-b1e3-4e46-99f0-dfd194cd22b0}">
+                        <labels>
+                          <label description="PayrollAccountCreated" languagecode="1033" />
+                        </labels>
+                        <control id="bpf_contact_ais_onboarding:ais_payrollaccountcreated" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="ais_payrollaccountcreated" relationship="bpf_contact_ais_onboarding" isrequired="true" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

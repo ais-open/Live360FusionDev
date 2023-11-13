@@ -1,0 +1,32 @@
+<appaction uniquename="ais__CreatePayrollAcco!1b043161387c4034835ce7ca9b77f742!ais_PeopleManager!contact!0">
+  <appmoduleid>
+    <uniquename>ais_PeopleManager</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Create Payroll Account">
+    <label description="Create Payroll Account" languagecode="1033" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>contact</logicalname>
+  </contextentity>
+  <contextvalue>contact</contextvalue>
+  <fonticon>$clientsvg:Add</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>CreatePayrollAcco!1b043161387c4034835ce7ca9b77f742</name>
+  <onclickeventjavascriptfunctionname>openCreatePayrollAccount</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":3}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>f1ca18a4-2f82-ee11-8179-000d3a56434d</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100015.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

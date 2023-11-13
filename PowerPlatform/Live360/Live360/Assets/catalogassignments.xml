@@ -1,0 +1,6 @@
+<catalogassignments>
+  <catalogassignment catalogid.uniquename="ais_Payroll" object.uniquename="ais_CreatePayrollAccount" objectidtype="customapi">
+    <iscustomizable>0</iscustomizable>
+    <name>Payroll Account</name>
+  </catalogassignment>
+</catalogassignments>

@@ -1,0 +1,13 @@
+<catalog uniquename="ais_Payroll">
+  <description default="Payroll">
+    <label description="Payroll" languagecode="1033" />
+  </description>
+  <displayname default="Payroll">
+    <label description="Payroll" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <name>Payroll</name>
+  <parentcatalogid>
+    <uniquename>ais_Live360</uniquename>
+  </parentcatalogid>
+</catalog>

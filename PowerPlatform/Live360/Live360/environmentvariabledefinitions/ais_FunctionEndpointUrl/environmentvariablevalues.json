@@ -1,0 +1,9 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "@environmentvariablevalueid": "27ff94de-0a78-ee11-8179-000d3a56434d",
+      "iscustomizable": "1",
+      "value": "https://live360-ais-demo.azurewebsites.net"
+    }
+  }
+}
