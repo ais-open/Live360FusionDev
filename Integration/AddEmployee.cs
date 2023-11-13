@@ -24,6 +24,7 @@ public class AddEmployee
     [OpenApiOperation(operationId: nameof(AddEmployee))]
     [OpenApiParameter(name: "first", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **First** parameter")]
     [OpenApiParameter(name: "last", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Last** parameter")]
+    [OpenApiParameter(name: "salary", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The Employee's **Salary** parameter")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
     public IActionResult Run(
         [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
@@ -43,7 +44,7 @@ public class AddEmployee
         var service = new EmployeeStorageService(connStr);
         var employee = service.AddEmployee(first, last, salaryDecimal);
 
-        return new OkObjectResult(employee.RowKey);
+        return new OkObjectResult("ADDED" + employee.RowKey);
     }
 }
 
