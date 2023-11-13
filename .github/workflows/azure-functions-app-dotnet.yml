@@ -20,7 +20,7 @@ name: Deploy DotNet project to Azure Function App
 
 on:
   push:
-    branches: ["test-deploy"]
+    branches: ["main"]
 
 env:
   AZURE_FUNCTIONAPP_NAME: "live360-ais-demo" # set this to your function app name on Azure
