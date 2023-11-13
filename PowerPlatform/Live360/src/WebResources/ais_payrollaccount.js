@@ -1,12 +1,12 @@
 function openCreatePayrollAccount(primaryItemIds) {
  // Inline Page
 
- let itemId = primaryItemIds;
+ let itemId = primaryItemIds[0];
 
 var pageInput = {
     pageType: "custom",
     name: "ais_createpayrollaccount_bbd5e",
-    //recordId: itemId,
+    recordId: itemId,
 };
 var navigationOptions = {
     target: 2,

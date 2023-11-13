@@ -17,11 +17,12 @@
                 Back();,
                 "Cancel",
                 Back());
-        SubTitle: ="Enter the starting salary of the new employee."
+        SubTitle: =$"Enter the starting salary of the new employee, {RecordItem.'First Name'} {RecordItem.'Last Name'}."
         Width: =Parent.Width
 
     Spinner1 As Spinner:
         Appearance: ='Spinner.Appearance'.Primary
+        BasePaletteColor: =
         DisplayMode: =DisplayMode.Edit
         Height: =Parent.Height
         Label: ="Creating payroll account"

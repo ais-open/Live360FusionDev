@@ -195,6 +195,7 @@ Dialog_2 As CanvasComponent:
                         ZIndex: =1
 
                     Label1 As Label:
+                        Color: =
                         DisplayMode: =DisplayMode.Edit
                         Height: =32
                         Text: ="per year"

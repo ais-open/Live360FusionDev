@@ -9,11 +9,12 @@
         "SizeBreakpoints",
         "BackEnabled",
         "Theme",
+        "Formulas",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
-          "InvariantPropertyName": "Formulas",
+          "InvariantPropertyName": "OnError",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
@@ -21,7 +22,7 @@
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
-          "InvariantPropertyName": "OnError",
+          "InvariantPropertyName": "OnStart",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -66,6 +67,11 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnError",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnStart",
           "RuleProviderType": "Unknown"
         },
         {

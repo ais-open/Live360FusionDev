@@ -1,12 +1,6 @@
 App As appinfo:
     BackEnabled: =true
-    Formulas: |-
-        =RecordItem =
-            If(IsBlank(Param("recordId")),
-                First(Contacts),
-                LookUp(Contacts, Contact = GUID(Param("recordId")))
-            );
-            
+    Formulas: =
     OnError: |-
         =Notify(
             Concatenate(
@@ -30,6 +24,14 @@ App As appinfo:
                 User: User().Email
             }
         )
+    OnStart: |-
+        =Set(RecordItem,
+            If(IsBlank(Param("recordId")),
+                Trace("No recordId was passed", TraceSeverity.Error);
+                First(Contacts),
+                LookUp(Contacts, Contact = GUID(Substitute(Substitute(Param("recordId"), "{", ""), "}", ""))
+            )));
+            
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

@@ -1,6 +1,10 @@
 {
   "ba9202a4-a1a3-4e41-9ed8-d161c666b3a7": {
+    "appActions": [
+      "Run"
+    ],
     "connectionRef": {
+      "apiTier": "Standard",
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
@@ -38,10 +42,15 @@
     "id": "ba9202a4-a1a3-4e41-9ed8-d161c666b3a7"
   },
   "f8876986-171a-432f-9aba-776542bde84d": {
+    "appActions": [],
     "connectionRef": {
+      "apiTier": "Premium",
+      "bypassConsent": true,
       "displayName": "Microsoft Dataverse",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/commondataserviceforapps/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps",
+      "parameterHints": {},
+      "parameterHintsV2": {}
     },
     "datasets": {},
     "dataSources": [],
