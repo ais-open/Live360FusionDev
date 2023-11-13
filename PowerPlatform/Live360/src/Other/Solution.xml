@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23101.246" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.23102.234" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>Live360</UniqueName>
     <LocalizedNames>
@@ -81,14 +81,20 @@
       <RootComponent type="1" schemaName="ais_backgroundcheck" behavior="0" />
       <RootComponent type="1" schemaName="ais_onboarding" behavior="0" />
       <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="29" id="{3e595cf3-9681-ee11-8179-000d3a56434d}" behavior="0" />
       <RootComponent type="29" id="{b1fbb04b-656c-ee11-8df0-000d3a56434d}" behavior="0" />
       <RootComponent type="29" id="{ff43733e-c379-ee11-8179-000d3a19aaea}" behavior="0" />
       <RootComponent type="29" id="{ffd263bb-8979-ee11-8179-000d3a5325ea}" behavior="0" />
+      <RootComponent type="300" schemaName="ais_createpayrollaccount_bbd5e" behavior="0" />
       <RootComponent type="300" schemaName="ais_newhire_5e191" behavior="0" />
       <RootComponent type="62" schemaName="ais_PeopleManager" behavior="0" />
       <RootComponent type="80" schemaName="ais_PeopleManager" behavior="0" />
     </RootComponents>
     <MissingDependencies>
+      <MissingDependency>
+        <Required type="300" schemaName="cat_powercatcomponentlibrary_0be3a" displayName="Power CAT Component Library" solution="CreatorKitCore (1.0.20230727.2)" />
+        <Dependent type="300" schemaName="ais_createpayrollaccount_bbd5e" displayName="Create Payroll Account" />
+      </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
           <package>msdynce_AppCommonAnchor (9.0.23101.10001)</package>
@@ -150,12 +156,16 @@
         <Dependent type="300" schemaName="ais_newhire_5e191" displayName="New Hire" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2310.1023)" />
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2310.2017)" />
         <Dependent type="60" displayName="Employee main form" parentDisplayName="Contact" id="{a7b17f30-8c79-ee11-8179-000d3a5325ea}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="90" schemaName="Live360.DiscountBackgroundChecks.DiscountBackgroundChecker, Live360.DiscountBackgroundChecks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e774b5b266f4ac46" displayName="Live360.DiscountBackgroundChecks.DiscountBackgroundChecker" solution="Active" id="{ff9fce3f-c1e7-46b3-83dc-3bd913ad5a77}" />
-        <Dependent type="CustomAPI" displayName="ais_SaveBackgroundCheckResult" id.uniquename="ais_SaveBackgroundCheckResult" />
+        <Required type="90" schemaName="Live360.Plugins.BackgroundCheckApiPlugin, Live360.BackgroundCheck, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0289d19508e933e" displayName="Live360.Plugins.BackgroundCheckApiPlugin" solution="Active" id="{531fef72-4401-41b6-873f-59bed75c5486}" />
+        <Dependent type="CustomAPI" displayName="ais_BackgroundResultsApi" id.uniquename="ais_BackgroundResultsApi" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="90" schemaName="Microsoft.PowerFx.Evaluator, Microsoft.PowerFx.PlexPlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" displayName="Microsoft.PowerFx.Evaluator" solution="msft_PowerfxRuleSolution (1.0.0.56)" id="{462b3e8f-beb4-4981-9b87-a60c2162a9f7}" />
+        <Dependent type="CustomAPI" displayName="ais_CreatePayrollAccount" id.uniquename="ais_CreatePayrollAccount" />
       </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="AllowNotificationsEarlyAccess" solution="AppNotifications (10.0.0.14)" id.uniquename="AllowNotificationsEarlyAccess" />

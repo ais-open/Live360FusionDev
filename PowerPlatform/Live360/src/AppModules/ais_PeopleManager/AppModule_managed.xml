@@ -12,14 +12,14 @@
   <AppModuleComponents>
     <AppModuleComponent type="1" schemaName="contact" />
     <AppModuleComponent type="60" id="{a7b17f30-8c79-ee11-8179-000d3a5325ea}" />
-    <AppModuleComponent type="60" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}" />
-    <AppModuleComponent type="60" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}" />
-    <AppModuleComponent type="60" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}" />
     <AppModuleComponent type="60" id="{d880c3cf-80e2-42f3-82f9-24d040d09f17}" />
     <AppModuleComponent type="60" id="{449faa0e-f471-48ec-87d0-4719909546d2}" />
     <AppModuleComponent type="60" id="{7bb87dfd-ec3e-4ed9-8e3e-5725d3067295}" />
     <AppModuleComponent type="60" id="{661157fe-2fc9-4eaa-835f-5bfa2f7b64f7}" />
+    <AppModuleComponent type="60" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}" />
+    <AppModuleComponent type="60" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}" />
     <AppModuleComponent type="60" id="{bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf}" />
+    <AppModuleComponent type="60" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}" />
     <AppModuleComponent type="62" schemaName="ais_PeopleManager" />
   </AppModuleComponents>
   <AppModuleRoleMaps>

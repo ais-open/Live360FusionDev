@@ -1,0 +1,32 @@
+{
+  "01dd481e-ac57-4096-9769-524587f9b58a": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {
+          "value": "3e595cf3-9681-ee11-8179-000d3a56434d"
+        },
+        "workflowName": {
+          "value": "8ff73d81-8241-b5ed-6771-1ab1515d9ca4"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {
+          "value": "3e595cf3-9681-ee11-8179-000d3a56434d"
+        },
+        "workflowName": {
+          "value": "8ff73d81-8241-b5ed-6771-1ab1515d9ca4"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CreatePayrollAccount"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "01dd481e-ac57-4096-9769-524587f9b58a"
+  }
+}

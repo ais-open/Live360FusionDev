@@ -1,0 +1,9 @@
+{
+  "environmentvariablevalues": {
+    "environmentvariablevalue": {
+      "@environmentvariablevalueid": "cb0e8b64-477f-ee11-8179-000d3a56434d",
+      "iscustomizable": "1",
+      "value": "/subscriptions/eaabd6a6-7835-447a-aff4-629066fdeb75/resourceGroups/Live360-KV/providers/Microsoft.KeyVault/vaults/Live360-Vault/secrets/AccountingFunctionKey"
+    }
+  }
+}

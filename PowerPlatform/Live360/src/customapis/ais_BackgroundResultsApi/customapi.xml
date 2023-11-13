@@ -1,0 +1,18 @@
+<customapi uniquename="ais_BackgroundResultsApi">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="BackgroundResultsApi">
+    <label description="BackgroundResultsApi" languagecode="1033" />
+  </description>
+  <displayname default="BackgroundResultsApi">
+    <label description="BackgroundResultsApi" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>BackgroundResultsApi</name>
+  <plugintypeid>
+    <plugintypeexportkey>531fef72-4401-41b6-873f-59bed75c5486</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

@@ -1,0 +1,92 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "FunctionEndpointUrl (ais_FunctionEndpointUrl)": {
+          "defaultValue": "https://ais-live-360-2023a.azurewebsites.net",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ais_FunctionEndpointUrl",
+            "description": "Endpoint address for new employee Azure Function"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "5b8ad8b0-2474-4618-95a0-95f8db1534ff"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "First Name",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Enter employee first name",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_1": {
+                  "title": "Last Name",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Enter employee last name",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text",
+                "text_1"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "HTTP": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "4cab331b-cd17-4fbe-9014-f5742d5e38f0"
+          },
+          "type": "Http",
+          "inputs": {
+            "method": "POST",
+            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/EmployeeAdded?First=&Last="
+          }
+        },
+        "Respond_to_a_PowerApp_or_flow": {
+          "runAfter": {
+            "HTTP": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "68553a58-c263-4b5d-9ca0-474c24a7a6f3"
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "statusCode": 200,
+            "body": {},
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

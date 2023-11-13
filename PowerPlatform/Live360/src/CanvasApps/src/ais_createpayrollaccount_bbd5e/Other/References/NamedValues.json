@@ -1,0 +1,19 @@
+{
+  "NamedValues": [
+    {
+      "Kind": "Page",
+      "Name": "Dataverse Actions Page",
+      "Value": "custompage:cat_dataverseactiondetailspage_eec36"
+    },
+    {
+      "Kind": "Page",
+      "Name": "New Hire",
+      "Value": "custompage:ais_newhire_5e191"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Overview",
+      "Value": "custompage:cat_overview_3dbf5"
+    }
+  ]
+}

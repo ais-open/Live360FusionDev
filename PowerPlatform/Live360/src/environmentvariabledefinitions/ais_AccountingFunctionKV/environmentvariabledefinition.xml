@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="ais_AccountingFunctionKV">
+  <displayname default="AccountingFunctionKV">
+    <label description="AccountingFunctionKV" languagecode="1033" />
+  </displayname>
+  <introducedversion>1.0.0.2</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000005</type>
+</environmentvariabledefinition>

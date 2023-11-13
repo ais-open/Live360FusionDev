@@ -1,0 +1,12 @@
+[
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 1,
+    "LibraryId": "5a40d10c-33db-43ec-ae39-4364569d015f",
+    "LibraryLogicalName": "cat_powercatcomponentlibrary_0be3a",
+    "LibraryVersion": "2023-11-07T14:40:39Z",
+    "OriginalComponentDefinitionTemplateId": "2e88179d732a402184a767c94eab038b",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-11-07T14:40:39.475+00:00"
+  }
+]

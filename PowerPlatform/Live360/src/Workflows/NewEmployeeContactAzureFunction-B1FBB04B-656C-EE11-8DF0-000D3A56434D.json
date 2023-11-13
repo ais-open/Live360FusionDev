@@ -24,7 +24,7 @@
           "type": "SecureObject"
         },
         "FunctionEndpointUrl (ais_FunctionEndpointUrl)": {
-          "defaultValue": "test",
+          "defaultValue": "https://ais-live-360-2023a.azurewebsites.net",
           "type": "String",
           "metadata": {
             "schemaName": "ais_FunctionEndpointUrl",
@@ -33,21 +33,22 @@
         }
       },
       "triggers": {
-        "When_a_row_is_added,_modified_or_deleted": {
+        "When_an_action_is_performed": {
           "metadata": {
-            "operationMetadataId": "7210a75e-4b5a-476d-b2a3-9dfa926623e3"
+            "operationMetadataId": "0da0ced0-db06-44b1-a344-5e4c83e8d10f"
           },
           "type": "OpenApiConnectionWebhook",
           "inputs": {
             "host": {
               "connectionName": "shared_commondataserviceforapps_1",
-              "operationId": "SubscribeWebhookTrigger",
+              "operationId": "BusinessEventsTrigger",
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
-              "subscriptionRequest/message": 1,
+              "catalog": "ais_Live360",
+              "category": "ais_Payroll",
               "subscriptionRequest/entityname": "contact",
-              "subscriptionRequest/scope": 4
+              "subscriptionRequest/sdkmessagename": "ais_CreatePayrollAccount"
             },
             "authentication": "@parameters('$authentication')"
           }
@@ -62,7 +63,7 @@
           "type": "Http",
           "inputs": {
             "method": "POST",
-            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/EmployeeAdded?First=@{triggerOutputs()?['body/firstname']}&Last=@{triggerOutputs()?['body/lastname']}"
+            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/EmployeeAdded?First=&Last="
           }
         }
       }

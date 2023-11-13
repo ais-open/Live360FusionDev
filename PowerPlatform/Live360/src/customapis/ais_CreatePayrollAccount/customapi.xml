@@ -1,0 +1,22 @@
+<customapi uniquename="ais_CreatePayrollAccount">
+  <allowedcustomprocessingsteptype>1</allowedcustomprocessingsteptype>
+  <bindingtype>1</bindingtype>
+  <boundentitylogicalname>contact</boundentitylogicalname>
+  <description default="Create Payroll Account">
+    <label description="Create Payroll Account" languagecode="1033" />
+  </description>
+  <displayname default="Create Payroll Account">
+    <label description="Create Payroll Account" languagecode="1033" />
+  </displayname>
+  <fxexpressionid>
+    <uniquename>ais_CreatePayrollAccount</uniquename>
+  </fxexpressionid>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>Create Payroll Account</name>
+  <plugintypeid>
+    <plugintypeexportkey>462b3e8f-beb4-4981-9b87-a60c2162a9f7</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

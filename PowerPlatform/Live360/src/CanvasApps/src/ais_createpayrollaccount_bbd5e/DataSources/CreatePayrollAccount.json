@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "d2200316-208e-428c-9e5d-f8ab6e7a6b95",
+    "Name": "CreatePayrollAccount",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "3e595cf3-9681-ee11-8179-000d3a56434d"
+  }
+]
