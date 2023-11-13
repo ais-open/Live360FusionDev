@@ -8,6 +8,7 @@ public class Employee : ITableEntity
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public decimal Salary { get; set; }
 
     // entity properties
     public string PartitionKey { get; set; }
