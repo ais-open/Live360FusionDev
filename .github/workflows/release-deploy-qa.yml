@@ -1,7 +1,7 @@
-name: release-solution-to-prod
-# prepare for releasing to prod:
+name: release-solution-to-qa
+# prepare for releasing to qa:
 #   convert solution to managed (using a build PowerPlatform environment for the conversion)
-#   upload the solution to the GitHub artifacts and deploy to the PROD environment
+#   upload the solution to the GitHub artifacts and deploy to the QA environment
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ on:
       solution_source_folder: 
        description: 'folder name to be created and checked in *do not change*'
        required: true
-       default: solutions/
+       default: PowerPlatform/Live360/
       solution_release_folder:
        description: 'folder where the released binaries are going to be hosted *do not change*'
        required: true
@@ -35,7 +35,7 @@ on:
 env:
 #edit your values here
   BUILD_ENVIRONMENT_URL: 'https://ais-live360-build.crm.dynamics.com'
-  PRODUCTION_ENVIRONMENT_URL: 'https://ais-live360.crm.dynamics.com'
+  QA_ENVIRONMENT_URL: 'https://ais-live360-qa.crm.dynamics.com'
   CLIENT_ID: 'a06d95e6-597b-4081-90b2-328f30455e84'
   TENANT_ID: '1b37c04e-260e-4189-a11b-0b8609ed3df0'
 
@@ -105,10 +105,10 @@ jobs:
       with:
         name: managedSolutions
         path: ${{ github.event.inputs.solution_release_folder}}
-    - name: Import solution to prod env
+    - name: Import solution to QA env
       uses: microsoft/powerplatform-actions/import-solution@v0
       with:
-        environment-url: ${{env.PRODUCTION_ENVIRONMENT_URL}}
+        environment-url: ${{env.QA_ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
