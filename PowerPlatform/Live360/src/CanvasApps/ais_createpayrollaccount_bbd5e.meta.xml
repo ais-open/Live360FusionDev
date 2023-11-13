@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>ais_createpayrollaccount_bbd5e</Name>
-  <AppVersion>2023-11-12T20:18:56Z</AppVersion>
+  <AppVersion>2023-11-13T15:48:17Z</AppVersion>
   <Status>Ready</Status>
   <CreatedByClientVersion>3.23104.18.0</CreatedByClientVersion>
   <MinClientVersion>3.23104.18.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.23104.18","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"false","isUnifiedRootApp":"false"}</Tags>
+  <Tags>{"primaryDeviceWidth":"2083","primaryDeviceHeight":"967","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.23104.18","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false","sienaVersion":"20231113T152722Z-3.23104.18.0"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
@@ -14,8 +14,8 @@
   <CommitMessage xsi:nil="true"></CommitMessage>
   <Publisher xsi:nil="true"></Publisher>
   <AuthorizationReferences>[]</AuthorizationReferences>
-  <ConnectionReferences>{"01dd481e-ac57-4096-9769-524587f9b58a":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png","dataSources":["CreatePayrollAccount"],"dependencies":[],"dependents":[],"parameterHints":{"workflowName":{"value":"0e79a39f-d393-45f7-addb-214ba262de6c"},"workflowEntityId":{"value":"3e595cf3-9681-ee11-8179-000d3a56434d"}},"parameterHintsV2":{"workflowName":{"value":"0e79a39f-d393-45f7-addb-214ba262de6c"},"workflowEntityId":{"value":"3e595cf3-9681-ee11-8179-000d3a56434d"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]}}</ConnectionReferences>
-  <DatabaseReferences>{}</DatabaseReferences>
+  <ConnectionReferences>{"ba9202a4-a1a3-4e41-9ed8-d161c666b3a7":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png","dataSources":["CreatePayrollAccount"],"dependencies":["f8876986-171a-432f-9aba-776542bde84d"],"dependents":[],"parameterHints":{"workflowName":{"value":"72b80f2f-7565-4549-88ac-215cdc948b95"},"workflowEntityId":{"value":"3e595cf3-9681-ee11-8179-000d3a56434d"},"f8876986-171a-432f-9aba-776542bde84d":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"72b80f2f-7565-4549-88ac-215cdc948b95"},"workflowEntityId":{"value":"3e595cf3-9681-ee11-8179-000d3a56434d"},"shared_commondataserviceforapps":{"value":"f8876986-171a-432f-9aba-776542bde84d"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"f8876986-171a-432f-9aba-776542bde84d":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["ba9202a4-a1a3-4e41-9ed8-d161c666b3a7"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified","environmentVariableName":""}},"dataSources":{"Contacts":{"entitySetName":"contacts","logicalName":"contact"}}}}</DatabaseReferences>
   <AppComponents>[]</AppComponents>
   <AppComponentDependencies>[{"appComponentName":"2e88179d732a402184a767c94eab038b","appName":"d50a8ebd-4cbf-43a8-a9f9-c97199a3b6ca","appComponentLibraryName":"5a40d10c-33db-43ec-ae39-4364569d015f","appComponentLibraryVersion":"2023-11-07T14:40:39Z","appComponentLibraryLogicalName":"cat_powercatcomponentlibrary_0be3a","environmentName":"1093f462-7c0e-e63f-aff3-08d4008cfb1c"}]</AppComponentDependencies>
   <CanConsumeAppPass>1</CanConsumeAppPass>
@@ -24,7 +24,7 @@
   <AdminControlBypassConsent>0</AdminControlBypassConsent>
   <EmbeddedApp xsi:nil="true"></EmbeddedApp>
   <IntroducedVersion>1.0</IntroducedVersion>
-  <CdsDependencies>{"cdsdependencies":[{"dependencyid":"3e595cf3-9681-ee11-8179-000d3a56434d","componenttype":29,"componenttypeplatformname":"Workflow"},{"logicalname":"cat_powercatcomponentlibrary_0be3a","componenttype":300,"componenttypeplatformname":"CanvasApp"}]}</CdsDependencies>
+  <CdsDependencies>{"cdsdependencies":[{"dependencyid":"3e595cf3-9681-ee11-8179-000d3a56434d","componenttype":29,"componenttypeplatformname":"Workflow"},{"logicalname":"contact","componenttype":1},{"logicalname":"cat_powercatcomponentlibrary_0be3a","componenttype":300,"componenttypeplatformname":"CanvasApp"}]}</CdsDependencies>
   <IsCustomizable>1</IsCustomizable>
   <BackgroundImageUri>/CanvasApps/ais_createpayrollaccount_bbd5e_BackgroundImageUri</BackgroundImageUri>
   <DocumentUri>/CanvasApps/ais_createpayrollaccount_bbd5e_DocumentUri.msapp</DocumentUri>

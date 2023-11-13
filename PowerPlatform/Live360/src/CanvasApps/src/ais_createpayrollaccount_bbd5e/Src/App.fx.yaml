@@ -1,5 +1,35 @@
 App As appinfo:
     BackEnabled: =true
+    Formulas: |-
+        =RecordItem =
+            If(IsBlank(Param("recordId")),
+                First(Contacts),
+                LookUp(Contacts, Contact = GUID(Param("recordId")))
+            );
+            
+    OnError: |-
+        =Notify(
+            Concatenate(
+                FirstError.Message,
+                ", Observed: ",
+                FirstError.Observed,
+                ", Source: ",
+                FirstError.Source
+            ),
+            NotificationType.Error
+        );
+        Trace(
+            "Unhandled Error",
+            TraceSeverity.Error,
+            {
+                Kind: FirstError.Kind,
+                Message: FirstError.Message,
+                Observed: FirstError.Observed,
+                Screen: App.ActiveScreen.Name,
+                Source: FirstError.Source,
+                User: User().Email
+            }
+        )
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:

@@ -4,11 +4,18 @@
     <jsonTypes targetNamespace="https://unitedstates-002.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_text_def" />
       <string name="ManualTriggerInput_text_1_def" />
+      <string name="ManualTriggerInput_text_2_def" />
+      <string name="ManualTriggerInput_text_3_def" />
       <object name="ManualTriggerInput">
         <property name="text" type="string" />
         <property name="text_1" type="string" />
+        <property name="text_2" type="string" />
+        <property name="text_3" type="string" />
       </object>
-      <object name="ResponseActionOutput" />
+      <string name="ResponseActionOutput_result_def" />
+      <object name="ResponseActionOutput">
+        <property name="result" type="string" />
+      </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
@@ -27,6 +34,12 @@
             </param>
             <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
               <doc title="Last Name" />
+            </param>
+            <param style="plain" name="text_2" path="/text_2" type="xs:string" required="true">
+              <doc title="Salary" />
+            </param>
+            <param style="plain" name="text_3" path="/text_3" type="xs:string" required="true">
+              <doc title="RecordId" />
             </param>
           </representation>
         </request>

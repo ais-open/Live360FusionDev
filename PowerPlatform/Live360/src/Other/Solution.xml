@@ -80,13 +80,15 @@
     <RootComponents>
       <RootComponent type="1" schemaName="ais_backgroundcheck" behavior="0" />
       <RootComponent type="1" schemaName="ais_onboarding" behavior="0" />
-      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="contact" behavior="2" />
       <RootComponent type="29" id="{3e595cf3-9681-ee11-8179-000d3a56434d}" behavior="0" />
       <RootComponent type="29" id="{b1fbb04b-656c-ee11-8df0-000d3a56434d}" behavior="0" />
       <RootComponent type="29" id="{ff43733e-c379-ee11-8179-000d3a19aaea}" behavior="0" />
       <RootComponent type="29" id="{ffd263bb-8979-ee11-8179-000d3a5325ea}" behavior="0" />
       <RootComponent type="300" schemaName="ais_createpayrollaccount_bbd5e" behavior="0" />
       <RootComponent type="300" schemaName="ais_newhire_5e191" behavior="0" />
+      <RootComponent type="61" schemaName="ais_payrollaccount" behavior="0" />
+      <RootComponent type="61" schemaName="ais_payrollaccount.js" behavior="0" />
       <RootComponent type="62" schemaName="ais_PeopleManager" behavior="0" />
       <RootComponent type="80" schemaName="ais_PeopleManager" behavior="0" />
     </RootComponents>
@@ -126,12 +128,6 @@
         <Dependent type="80" schemaName="ais_PeopleManager" displayName="People Manager" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="60" displayName="Contact Card form" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf}">
-          <package>msdynce_AppCommonAnchor (9.0.23101.10001)</package>
-        </Required>
-        <Dependent type="80" schemaName="ais_PeopleManager" displayName="People Manager" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="60" displayName="Contact Quick Form" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}">
           <package>msdynce_AppCommonAnchor (9.0.23101.10001)</package>
         </Required>
@@ -154,10 +150,6 @@
       <MissingDependency>
         <Required type="66" schemaName="cat_PowerCAT.SubwayNav" displayName="cat_PowerCAT.SubwayNav" solution="CreatorKitCore (1.0.20230727.2)" />
         <Dependent type="300" schemaName="ais_newhire_5e191" displayName="New Hire" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2310.2017)" />
-        <Dependent type="60" displayName="Employee main form" parentDisplayName="Contact" id="{a7b17f30-8c79-ee11-8179-000d3a5325ea}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="90" schemaName="Live360.Plugins.BackgroundCheckApiPlugin, Live360.BackgroundCheck, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0289d19508e933e" displayName="Live360.Plugins.BackgroundCheckApiPlugin" solution="Active" id="{531fef72-4401-41b6-873f-59bed75c5486}" />

@@ -14,6 +14,11 @@
       "Kind": "Page",
       "Name": "Overview",
       "Value": "custompage:cat_overview_3dbf5"
+    },
+    {
+      "Kind": "Page",
+      "Name": "Create Payroll Account",
+      "Value": "custompage:ais_createpayrollaccount_bbd5e"
     }
   ]
 }

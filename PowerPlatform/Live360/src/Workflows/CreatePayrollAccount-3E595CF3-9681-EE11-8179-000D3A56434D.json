@@ -1,10 +1,24 @@
 {
   "properties": {
-    "connectionReferences": {},
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ais_Live360Dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
     "definition": {
       "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
         "$authentication": {
           "defaultValue": {},
           "type": "SecureObject"
@@ -42,11 +56,27 @@
                   "x-ms-dynamically-added": true,
                   "description": "Enter employee last name",
                   "x-ms-content-hint": "TEXT"
+                },
+                "text_2": {
+                  "title": "Salary",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Enter the salary amount",
+                  "x-ms-content-hint": "TEXT"
+                },
+                "text_3": {
+                  "title": "RecordId",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
                 }
               },
               "required": [
                 "text",
-                "text_1"
+                "text_1",
+                "text_2",
+                "text_3"
               ]
             }
           }
@@ -61,13 +91,16 @@
           "type": "Http",
           "inputs": {
             "method": "POST",
-            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/EmployeeAdded?First=&Last="
+            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/EmployeeAdded?First=@{triggerBody()['text']}&Last=@{triggerBody()['text_1']}"
           }
         },
         "Respond_to_a_PowerApp_or_flow": {
           "runAfter": {
-            "HTTP": [
-              "Succeeded"
+            "Update_a_row": [
+              "Succeeded",
+              "Skipped",
+              "Failed",
+              "TimedOut"
             ]
           },
           "metadata": {
@@ -77,11 +110,43 @@
           "kind": "PowerApp",
           "inputs": {
             "statusCode": 200,
-            "body": {},
+            "body": {
+              "result": "@{outputs('HTTP')['statusCode']}"
+            },
             "schema": {
               "type": "object",
-              "properties": {}
+              "properties": {
+                "result": {
+                  "title": "Result",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
             }
+          }
+        },
+        "Update_a_row": {
+          "runAfter": {
+            "HTTP": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "29163c09-31f7-49b7-bc9c-5304033ed281"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "recordId": "@triggerBody()['text_3']",
+              "item/ais_payrollaccountcreated": true
+            },
+            "authentication": "@parameters('$authentication')"
           }
         }
       }

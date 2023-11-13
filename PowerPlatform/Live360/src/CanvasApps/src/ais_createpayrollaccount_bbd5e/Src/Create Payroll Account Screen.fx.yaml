@@ -1,0 +1,33 @@
+"'Create Payroll Account Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Dialog_3 As Dialog_2:
+        ContentWidth: =Dialog_3.DialogWidth
+        ContentX: = Dialog_3.Width/2-Dialog_3.DialogWidth/2
+        ContentY: = Dialog_3.Height/2-Dialog_3.DialogHeight/2+DialogHeaderContainer_1.Height + Label3_3.Height
+        Fill: =Dialog_3.OverlayColor
+        Height: =Parent.Height
+        OnButtonSelect: |-
+            =Switch(
+                Self.SelectedButton.Label,
+                "Save",
+                UpdateContext({_ShowSpinner: true});
+                CreatePayrollAccount.Run(RecordItem.'First Name', RecordItem.'Last Name', Dialog_3.Salary, RecordItem.Contact);
+                UpdateContext({_ShowSpinner: false});
+                Back();,
+                "Cancel",
+                Back());
+        SubTitle: ="Enter the starting salary of the new employee."
+        Width: =Parent.Width
+
+    Spinner1 As Spinner:
+        Appearance: ='Spinner.Appearance'.Primary
+        DisplayMode: =DisplayMode.Edit
+        Height: =Parent.Height
+        Label: ="Creating payroll account"
+        Visible: =_ShowSpinner
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =4
+

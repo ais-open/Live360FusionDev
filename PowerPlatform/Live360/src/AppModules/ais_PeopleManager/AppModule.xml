@@ -18,7 +18,6 @@
     <AppModuleComponent type="60" id="{661157fe-2fc9-4eaa-835f-5bfa2f7b64f7}" />
     <AppModuleComponent type="60" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}" />
     <AppModuleComponent type="60" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}" />
-    <AppModuleComponent type="60" id="{bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf}" />
     <AppModuleComponent type="60" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}" />
     <AppModuleComponent type="62" schemaName="ais_PeopleManager" />
   </AppModuleComponents>
@@ -30,6 +29,13 @@
     <LocalizedName description="People Manager" languagecode="1033" />
   </LocalizedNames>
   <appelements>
+    <appelement uniquename="ais_ais_PeopleManager_canvasappid_ais_createpayrollaccount_bbd5e">
+      <canvasappid>
+        <name>ais_createpayrollaccount_bbd5e</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>ais_ais_PeopleManager_canvasappid_ais_createpayrollaccount_bbd5e</name>
+    </appelement>
     <appelement uniquename="ais_ais_PeopleManager_canvasappid_ais_newhire_5e191">
       <canvasappid>
         <name>ais_newhire_5e191</name>

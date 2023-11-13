@@ -1,10 +1,13 @@
 {
-  "01dd481e-ac57-4096-9769-524587f9b58a": {
+  "ba9202a4-a1a3-4e41-9ed8-d161c666b3a7": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "f8876986-171a-432f-9aba-776542bde84d": {
+          "value": "shared_commondataserviceforapps"
+        },
         "workflowEntityId": {
           "value": "3e595cf3-9681-ee11-8179-000d3a56434d"
         },
@@ -13,6 +16,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "f8876986-171a-432f-9aba-776542bde84d"
+        },
         "workflowEntityId": {
           "value": "3e595cf3-9681-ee11-8179-000d3a56434d"
         },
@@ -25,8 +31,24 @@
     "dataSources": [
       "CreatePayrollAccount"
     ],
-    "dependencies": {},
+    "dependencies": {
+      "shared_commondataserviceforapps": "f8876986-171a-432f-9aba-776542bde84d"
+    },
     "dependents": [],
-    "id": "01dd481e-ac57-4096-9769-524587f9b58a"
+    "id": "ba9202a4-a1a3-4e41-9ed8-d161c666b3a7"
+  },
+  "f8876986-171a-432f-9aba-776542bde84d": {
+    "connectionRef": {
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "ba9202a4-a1a3-4e41-9ed8-d161c666b3a7"
+    ],
+    "id": "f8876986-171a-432f-9aba-776542bde84d"
   }
 }
