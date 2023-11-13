@@ -16,7 +16,7 @@ public class EmployeeStorageService
         _serviceClient = new TableServiceClient(storageConnectionString);
     }
 
-    public Employee AddEmployee(string firstName, string lastName)
+    public Employee AddEmployee(string firstName, string lastName, decimal salary)
     {
         _serviceClient.CreateTableIfNotExists(EMPLOYEE_TABLE_NAME);
         var tableClient = _serviceClient.GetTableClient(EMPLOYEE_TABLE_NAME);
@@ -25,7 +25,8 @@ public class EmployeeStorageService
             PartitionKey ="all_employees", 
             RowKey = $"{lastName}, {firstName}",
             FirstName = firstName,
-            LastName = lastName
+            LastName = lastName, 
+            Salary = salary
         };
 
         tableClient.UpsertEntity(entity);

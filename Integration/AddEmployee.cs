@@ -31,16 +31,17 @@ public class AddEmployee
     {
         string first = req.Query["first"];
         string last = req.Query["last"];
+        string salary = req.Query["salary"];
         
-        if (string.IsNullOrEmpty(first) || string.IsNullOrEmpty(last)) 
+        if (string.IsNullOrEmpty(first) || string.IsNullOrEmpty(last) || !Decimal.TryParse(salary, out var salaryDecimal)) 
         {
-            throw new ArgumentException("'first' and 'last' are required");
+            throw new ArgumentException("'first','last' and 'salary' are required and salary must be a decimal");
         }
 
         var connStr = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
 
         var service = new EmployeeStorageService(connStr);
-        var employee = service.AddEmployee(first, last);
+        var employee = service.AddEmployee(first, last, salaryDecimal);
 
         return new OkObjectResult(employee.RowKey);
     }
