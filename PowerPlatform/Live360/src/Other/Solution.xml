@@ -82,7 +82,6 @@
       <RootComponent type="1" schemaName="ais_onboarding" behavior="0" />
       <RootComponent type="1" schemaName="contact" behavior="2" />
       <RootComponent type="29" id="{3e595cf3-9681-ee11-8179-000d3a56434d}" behavior="0" />
-      <RootComponent type="29" id="{b1fbb04b-656c-ee11-8df0-000d3a56434d}" behavior="0" />
       <RootComponent type="29" id="{ff43733e-c379-ee11-8179-000d3a19aaea}" behavior="0" />
       <RootComponent type="29" id="{ffd263bb-8979-ee11-8179-000d3a5325ea}" behavior="0" />
       <RootComponent type="300" schemaName="ais_createpayrollaccount_bbd5e" behavior="0" />

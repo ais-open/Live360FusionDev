@@ -1,9 +1,10 @@
-// Inline Page
+function openCreatePayrollAccount(primaryItemIds, entityTypeName) {
+    // Inline Page
 var pageInput = {
     pageType: "custom",
     name: "ais_createpayrollaccount_bbd5e",
-    entityName: "<logical name of the table>",
-    recordId: "<record id>",
+    entityName: "contacts",
+    recordId: primaryItemIds,
 };
 var navigationOptions = {
     target: 2,
@@ -11,6 +12,7 @@ var navigationOptions = {
     width: {value: 50, unit: "%"},
     title: "Create Payroll Account"
 };
+
 Xrm.Navigation.navigateTo(pageInput, navigationOptions)
     .then(
         function () {
@@ -21,3 +23,5 @@ Xrm.Navigation.navigateTo(pageInput, navigationOptions)
             // Handle error
         }
     );
+}
+

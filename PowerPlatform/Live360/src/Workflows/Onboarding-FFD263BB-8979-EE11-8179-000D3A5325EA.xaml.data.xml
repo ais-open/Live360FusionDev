@@ -42,8 +42,8 @@
     <steplabels id="{942b7dc7-d856-4bc8-a580-c0e9d1163369}">
       <label languagecode="1033" description="Accounting System" />
     </steplabels>
-    <steplabels id="{796886ec-5f05-4385-9f20-a5b54d374e42}">
-      <label languagecode="1033" description="Create Payroll Account" />
+    <steplabels id="{55508b0d-6aa9-4b24-b73d-6888de4e08a5}">
+      <label languagecode="1033" description="PayrollAccountCreated" />
     </steplabels>
   </labels>
 </Workflow>

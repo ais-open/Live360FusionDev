@@ -24,7 +24,7 @@
                         <labels>
                           <label description="First Name" languagecode="1033" />
                         </labels>
-                        <control id="bpf_contact_ais_onboarding:firstname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="firstname" relationship="bpf_contact_ais_onboarding" isrequired="true" disabled="false" />
+                        <control id="bpf_contact_ais_onboarding:firstname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="firstname" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="true" />
                       </cell>
                     </row>
                     <row>
@@ -32,7 +32,7 @@
                         <labels>
                           <label description="Last Name" languagecode="1033" />
                         </labels>
-                        <control id="bpf_contact_ais_onboarding:lastname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="lastname" relationship="bpf_contact_ais_onboarding" isrequired="true" disabled="false" />
+                        <control id="bpf_contact_ais_onboarding:lastname" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="lastname" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="true" />
                       </cell>
                     </row>
                     <row>
@@ -40,7 +40,7 @@
                         <labels>
                           <label description="Email" languagecode="1033" />
                         </labels>
-                        <control id="bpf_contact_ais_onboarding:emailaddress1" classid="{ada2203e-b4cd-49be-9ddf-234642b43b52}" datafieldname="emailaddress1" relationship="bpf_contact_ais_onboarding" isrequired="false" disabled="false" />
+                        <control id="bpf_contact_ais_onboarding:emailaddress1" classid="{ada2203e-b4cd-49be-9ddf-234642b43b52}" datafieldname="emailaddress1" disabled="false" relationship="bpf_contact_ais_onboarding" isrequired="false" />
                       </cell>
                     </row>
                   </rows>
@@ -62,11 +62,11 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{796886ec-5f05-4385-9f20-a5b54d374e42}" showlabel="true" visible="true" labelid="{c8ca3c3f-ba47-42f4-afa1-a78c249ab052}">
+                      <cell id="{55508b0d-6aa9-4b24-b73d-6888de4e08a5}" showlabel="true" visible="true" labelid="{10b9ee0f-b1e3-4e46-99f0-dfd194cd22b0}">
                         <labels>
-                          <label description="Create Payroll Account" languagecode="1033" />
+                          <label description="PayrollAccountCreated" languagecode="1033" />
                         </labels>
-                        <control id="Step_15:b1fbb04b-656c-ee11-8df0-000d3a56434d_flowstep" classid="{00ad73da-bd4d-49c6-88a8-2f4f4cad4a20}" datafieldname="Step_15" isrequired="true" disabled="false" />
+                        <control id="bpf_contact_ais_onboarding:ais_payrollaccountcreated" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="ais_payrollaccountcreated" relationship="bpf_contact_ais_onboarding" isrequired="true" disabled="false" />
                       </cell>
                     </row>
                   </rows>
