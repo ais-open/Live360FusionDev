@@ -23,12 +23,12 @@ on:
       solution_source_folder: 
        description: 'folder name to be created and checked in *do not change*'
        required: true
-       default: PowerPlatform/Live360/
+       default: PowerPlatform/
       solution_release_folder:
        description: 'folder where the released binaries are going to be hosted *do not change*'
        required: true
        default: out/release
-  push: 
+  
   release:
     types: [created]
 
