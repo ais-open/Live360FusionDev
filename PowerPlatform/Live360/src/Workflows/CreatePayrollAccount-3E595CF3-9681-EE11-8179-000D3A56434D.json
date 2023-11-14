@@ -10,14 +10,14 @@
           "name": "shared_commondataserviceforapps"
         }
       },
-      "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78_1": {
+      "shared_ais-5flive360-20payroll-20account-5f293b57f196a64e78": {
         "runtimeSource": "invoker",
         "connection": {
-          "connectionReferenceLogicalName": "ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_7c3ef"
+          "connectionReferenceLogicalName": "ais_sharedais5flive36020payroll20account5f293b57f196a64e78_d86db"
         },
         "api": {
-          "name": "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78",
-          "logicalName": "new_5Flive360-2Dais-2Ddemo"
+          "name": "shared_ais-5flive360-20payroll-20account-5f293b57f196a64e78",
+          "logicalName": "ais_5Flive360-20payroll-20account"
         }
       }
     },
@@ -25,13 +25,13 @@
       "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
-        "$connections": {
-          "defaultValue": {},
-          "type": "Object"
-        },
         "$authentication": {
           "defaultValue": {},
           "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
         }
       },
       "triggers": {
@@ -100,8 +100,6 @@
           "type": "Response",
           "kind": "PowerApp",
           "inputs": {
-            "statusCode": 200,
-            "body": {},
             "schema": {
               "type": "object",
               "properties": {
@@ -110,8 +108,11 @@
                   "x-ms-dynamically-added": true,
                   "type": "string"
                 }
-              }
-            }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {}
           }
         },
         "Update_a_row": {
@@ -125,42 +126,37 @@
           },
           "type": "OpenApiConnection",
           "inputs": {
-            "host": {
-              "connectionName": "shared_commondataserviceforapps",
-              "operationId": "UpdateRecord",
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
-            },
             "parameters": {
               "entityName": "contacts",
               "recordId": "@triggerBody()['text_3']",
               "item/ais_payrollaccountcreated": true
             },
-            "authentication": "@parameters('$authentication')"
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
           }
         },
         "AddEmployee": {
           "runAfter": {},
-          "metadata": {
-            "operationMetadataId": "7ddcd03b-0ba1-4e5a-9b18-ebe326ab2643"
-          },
           "type": "OpenApiConnection",
           "inputs": {
-            "host": {
-              "connectionName": "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78_1",
-              "operationId": "post-addemployee",
-              "apiId": ""
-            },
             "parameters": {
-              "first": "@triggerBody()['text']",
-              "last": "@triggerBody()['text_1']",
-              "salary": "@triggerBody()['text_2']"
+              "first": "test",
+              "last": "test",
+              "salary": 1234
             },
-            "authentication": "@parameters('$authentication')"
+            "host": {
+              "apiId": "",
+              "operationId": "AddEmployee",
+              "connectionName": "shared_ais-5flive360-20payroll-20account-5f293b57f196a64e78"
+            }
           }
         }
       }
     },
-    "templateName": ""
+    "templateName": null
   },
   "schemaVersion": "1.0.0.0"
 }

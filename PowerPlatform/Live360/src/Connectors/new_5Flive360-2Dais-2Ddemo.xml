@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>a7c49fe0-cb4c-4088-9928-243b738b3205</connectorid>
+  <description>Import from "live360-ais-demo" Function App</description>
+  <displayname>live360-ais-demo</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>new_5Flive360-2Dais-2Ddemo</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/new_5Flive360-2Dais-2Ddemo_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/new_5Flive360-2Dais-2Ddemo_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/new_5Flive360-2Dais-2Ddemo_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/new_5Flive360-2Dais-2Ddemo_iconblob.Png</iconblob>
+</Connector>

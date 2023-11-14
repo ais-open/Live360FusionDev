@@ -87,6 +87,8 @@
       <RootComponent type="29" id="{ffd263bb-8979-ee11-8179-000d3a5325ea}" behavior="0" />
       <RootComponent type="300" schemaName="ais_createpayrollaccount_bbd5e" behavior="0" />
       <RootComponent type="300" schemaName="ais_newhire_5e191" behavior="0" />
+      <RootComponent type="372" id="{06213400-1f99-4de7-8919-daa96c32be0f}" schemaName="ais_5Flive360-20payroll-20account" behavior="0" />
+      <RootComponent type="372" id="{a7c49fe0-cb4c-4088-9928-243b738b3205}" schemaName="new_5Flive360-2Dais-2Ddemo" behavior="0" />
       <RootComponent type="61" schemaName="ais_payrollaccount" behavior="0" />
       <RootComponent type="61" schemaName="ais_payrollaccount.js" behavior="0" />
       <RootComponent type="61" schemaName="Live360/src/CanvasApps/src/ais_newhire_5e191/Other/Resources/Controls/PowerCAT.CommandBar.bundle.js" behavior="0" />
@@ -100,18 +102,6 @@
       <MissingDependency>
         <Required type="300" schemaName="cat_powercatcomponentlibrary_0be3a" displayName="Power CAT Component Library" solution="CreatorKitCore (1.0.20230727.2)" />
         <Dependent type="300" schemaName="ais_createpayrollaccount_bbd5e" displayName="Create Payroll Account" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="372" schemaName="new_5Flive360-2Dais-2Ddemo" displayName="live360-ais-demo" solution="Active" id="{a7c49fe0-cb4c-4088-9928-243b738b3205}" />
-        <Dependent type="29" displayName="Create Payroll Account" id="{3e595cf3-9681-ee11-8179-000d3a56434d}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="372" schemaName="new_5Flive360-2Dais-2Ddemo" displayName="live360-ais-demo" solution="Active" id="{a7c49fe0-cb4c-4088-9928-243b738b3205}" />
-        <Dependent type="connectionreference" displayName="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_02698" id.connectionreferencelogicalname="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_02698" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="372" schemaName="new_5Flive360-2Dais-2Ddemo" displayName="live360-ais-demo" solution="Active" id="{a7c49fe0-cb4c-4088-9928-243b738b3205}" />
-        <Dependent type="connectionreference" displayName="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_7c3ef" id.connectionreferencelogicalname="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_7c3ef" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">

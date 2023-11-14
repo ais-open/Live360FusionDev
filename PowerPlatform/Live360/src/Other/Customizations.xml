@@ -16,6 +16,7 @@
   <AppModules />
   <EntityDataProviders />
   <CanvasApps />
+  <Connectors />
   <connectionreferences>
     <connectionreference connectionreferencelogicalname="ais_Live360Dataverse">
       <connectionreferencedisplayname>Live360 Dataverse</connectionreferencedisplayname>
@@ -24,21 +25,11 @@
       <statecode>0</statecode>
       <statuscode>1</statuscode>
     </connectionreference>
-    <connectionreference connectionreferencelogicalname="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_02698">
-      <connectionreferencedisplayname>live360-ais-demo Live360-02698</connectionreferencedisplayname>
-      <connectorid>/providers/Microsoft.PowerApps/apis/shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78</connectorid>
+    <connectionreference connectionreferencelogicalname="ais_sharedais5flive36020payroll20account5f293b57f196a64e78_d86db">
+      <connectionreferencedisplayname>Live360 Payroll Account Live360-d86db</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_ais-5flive360-20payroll-20account-5f293b57f196a64e78</connectorid>
       <customconnectorid>
-        <connectorid>a7c49fe0-cb4c-4088-9928-243b738b3205</connectorid>
-      </customconnectorid>
-      <iscustomizable>1</iscustomizable>
-      <statecode>0</statecode>
-      <statuscode>1</statuscode>
-    </connectionreference>
-    <connectionreference connectionreferencelogicalname="ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_7c3ef">
-      <connectionreferencedisplayname>live360-ais-demo Live360-7c3ef</connectionreferencedisplayname>
-      <connectorid>/providers/Microsoft.PowerApps/apis/shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78</connectorid>
-      <customconnectorid>
-        <connectorid>a7c49fe0-cb4c-4088-9928-243b738b3205</connectorid>
+        <connectorid>06213400-1f99-4de7-8919-daa96c32be0f</connectorid>
       </customconnectorid>
       <iscustomizable>1</iscustomizable>
       <statecode>0</statecode>

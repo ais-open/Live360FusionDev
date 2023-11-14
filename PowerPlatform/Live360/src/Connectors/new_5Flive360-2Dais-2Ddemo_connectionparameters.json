@@ -1,0 +1,1 @@
+{"api_key":{"type":"securestring","uiDefinition":{"displayName":"Subscription key","description":"APIM subscription key to access your API","tooltip":"Enter your product or API subscription key","constraints":{"clearText":false,"required":"true"}}}}

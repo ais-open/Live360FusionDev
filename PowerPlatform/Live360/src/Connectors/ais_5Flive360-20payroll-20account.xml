@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>06213400-1f99-4de7-8919-daa96c32be0f</connectorid>
+  <description></description>
+  <displayname>Live360 Payroll Account</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>ais_5Flive360-20payroll-20account</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/ais_5Flive360-20payroll-20account_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/ais_5Flive360-20payroll-20account_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/ais_5Flive360-20payroll-20account_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/ais_5Flive360-20payroll-20account_iconblob.Png</iconblob>
+</Connector>
