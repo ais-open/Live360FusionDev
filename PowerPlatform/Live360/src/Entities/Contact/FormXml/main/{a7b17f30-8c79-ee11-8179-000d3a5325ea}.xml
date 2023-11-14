@@ -274,7 +274,7 @@
                     <row>
                       <cell locklevel="0" id="{51e982ac-5af5-4ad1-961c-ff06d0c90298}" rowspan="4" colspan="1" auto="false" labelid="{eb8414c2-e3f6-481c-a9ed-506ba9bd81c1}">
                         <labels>
-                          <label description="New SG control 1698935305744" languagecode="1033" />
+                          <label description="Background Checks" languagecode="1033" />
                         </labels>
                         <control indicationOfSubgrid="true" id="Control_new_1" classid="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}">
                           <parameters>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="Live360.BackgroundCheck, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0289d19508e933e" PluginAssemblyId="6c9ba013-f2b6-4b72-974e-1e03df546342" CustomizationLevel="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsolationMode>2</IsolationMode>
+  <SourceType>0</SourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <FileName>/PluginAssemblies/Live360BackgroundCheck-6C9BA013-F2B6-4B72-974E-1E03DF546342/Live360BackgroundCheck.dll</FileName>
+  <PluginTypes>
+    <PluginType AssemblyQualifiedName="Live360.Plugins.BackgroundCheckApiPlugin, Live360.BackgroundCheck, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c0289d19508e933e" PluginTypeId="531fef72-4401-41b6-873f-59bed75c5486" Name="Live360.Plugins.BackgroundCheckApiPlugin">
+      <FriendlyName>9c944dc6-2297-436f-a6ae-b0e45ed1d8ef</FriendlyName>
+    </PluginType>
+  </PluginTypes>
+</PluginAssembly>

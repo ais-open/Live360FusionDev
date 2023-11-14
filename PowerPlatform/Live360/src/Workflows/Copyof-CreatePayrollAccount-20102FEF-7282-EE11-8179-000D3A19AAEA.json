@@ -9,16 +9,6 @@
         "api": {
           "name": "shared_commondataserviceforapps"
         }
-      },
-      "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78_1": {
-        "runtimeSource": "invoker",
-        "connection": {
-          "connectionReferenceLogicalName": "ais_sharednew5flive3602dais2ddemo5f293b57f196a64e78_7c3ef"
-        },
-        "api": {
-          "name": "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78",
-          "logicalName": "new_5Flive360-2Dais-2Ddemo"
-        }
       }
     },
     "definition": {
@@ -32,6 +22,14 @@
         "$authentication": {
           "defaultValue": {},
           "type": "SecureObject"
+        },
+        "FunctionEndpointUrl (ais_FunctionEndpointUrl)": {
+          "defaultValue": "https://live360-ais-demo.azurewebsites.net",
+          "type": "String",
+          "metadata": {
+            "schemaName": "ais_FunctionEndpointUrl",
+            "description": "Endpoint address for new employee Azure Function"
+          }
         }
       },
       "triggers": {
@@ -85,6 +83,21 @@
         }
       },
       "actions": {
+        "HTTP": {
+          "runAfter": {
+            "Perform_an_unbound_action": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4cab331b-cd17-4fbe-9014-f5742d5e38f0"
+          },
+          "type": "Http",
+          "inputs": {
+            "method": "POST",
+            "uri": "@{parameters('FunctionEndpointUrl (ais_FunctionEndpointUrl)')}/api/AddEmployee?First=@{triggerBody()['text']}&Last=@{triggerBody()['text_1']}&Salary=@{triggerBody()['text_2']}&code=@{outputs('Perform_an_unbound_action')?['body/EnvironmentVariableSecretValue']}"
+          }
+        },
         "Respond_to_a_PowerApp_or_flow": {
           "runAfter": {
             "Update_a_row": [
@@ -101,7 +114,9 @@
           "kind": "PowerApp",
           "inputs": {
             "statusCode": 200,
-            "body": {},
+            "body": {
+              "result": "@{outputs('HTTP')['statusCode']}"
+            },
             "schema": {
               "type": "object",
               "properties": {
@@ -116,7 +131,7 @@
         },
         "Update_a_row": {
           "runAfter": {
-            "AddEmployee": [
+            "HTTP": [
               "Succeeded"
             ]
           },
@@ -126,9 +141,9 @@
           "type": "OpenApiConnection",
           "inputs": {
             "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
               "connectionName": "shared_commondataserviceforapps",
-              "operationId": "UpdateRecord",
-              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+              "operationId": "UpdateRecord"
             },
             "parameters": {
               "entityName": "contacts",
@@ -138,29 +153,35 @@
             "authentication": "@parameters('$authentication')"
           }
         },
-        "AddEmployee": {
+        "Perform_an_unbound_action": {
           "runAfter": {},
           "metadata": {
-            "operationMetadataId": "7ddcd03b-0ba1-4e5a-9b18-ebe326ab2643"
+            "operationMetadataId": "cf2a5456-dc20-4453-9f54-085f1bae7e7f"
           },
           "type": "OpenApiConnection",
           "inputs": {
             "host": {
-              "connectionName": "shared_new-5flive360-2dais-2ddemo-5f293b57f196a64e78_1",
-              "operationId": "post-addemployee",
-              "apiId": ""
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "PerformUnboundAction"
             },
             "parameters": {
-              "first": "@triggerBody()['text']",
-              "last": "@triggerBody()['text_1']",
-              "salary": "@triggerBody()['text_2']"
+              "actionName": "RetrieveEnvironmentVariableSecretValue",
+              "item/EnvironmentVariableName": "ais_AccountingFunctionKV"
             },
             "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "secureData": {
+              "properties": [
+                "outputs"
+              ]
+            }
           }
         }
       }
     },
-    "templateName": ""
+    "templateName": null
   },
   "schemaVersion": "1.0.0.0"
 }
