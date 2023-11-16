@@ -16,7 +16,6 @@
   <AppModules />
   <EntityDataProviders />
   <CanvasApps />
-  <Connectors />
   <connectionreferences>
     <connectionreference connectionreferencelogicalname="ais_Live360Dataverse">
       <connectionreferencedisplayname>Live360 Dataverse</connectionreferencedisplayname>
