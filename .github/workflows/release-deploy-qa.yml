@@ -55,25 +55,15 @@ jobs:
       with:
         lfs: true
 
-    - name: powerplatform-actions
-      uses: microsoft/powerplatform-actions@v1.2.0
-      with:
-        # URL of Power Platform environment to connect with; e.g. "https://test-env.crm.dynamics.com"
-        environment-url: # optional
-        # Power Platform user name to authenticate with, e.g. myname@my-org.onmicrosoft.com. Setting this input makes user-name and password required; specifying alternate "app-id" credential set of inputs will result in an error.
-        user-name: # optional
-        # Power Platform password, required if authenticating with username. Do NOT checkin password, instead create a secret and reference it here with: see: https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow
-        password-secret: # optional
-
     - name: Pack solution
-      uses: microsoft/powerplatform-actions/pack-solution@v1.2.0
+      uses: microsoft/powerplatform-actions/pack-solution@v0
       with:
         solution-folder: ${{ github.event.inputs.solution_source_folder}}/${{ github.event.inputs.solution_name }}/src
         solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-type: Unmanaged
 
     - name: Import solution as unmanaged to build env
-      uses: microsoft/powerplatform-actions/import-solution@v1.2.0
+      uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
@@ -84,7 +74,7 @@ jobs:
         publish-changes: true
 
     - name: Export solution as managed
-      uses: microsoft/powerplatform-actions/export-solution@v1.2.0
+      uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
@@ -117,7 +107,7 @@ jobs:
         name: managedSolutions
         path: ${{ github.event.inputs.solution_release_folder}}
     - name: Import solution to QA env
-      uses: microsoft/powerplatform-actions/import-solution@v1.2.0
+      uses: microsoft/powerplatform-actions/import-solution@v0
       with:
         environment-url: ${{env.QA_ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
