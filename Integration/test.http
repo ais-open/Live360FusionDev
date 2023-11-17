@@ -1,0 +1,43 @@
+
+
+@appUrl = https://ais-live360-dev.api.crm.dynamics.com
+@commandName = ais_BackgroudCheckResultsAPI
+
+### Get OAuth Token
+
+# @name oauth
+@tenant = 1b37c04e-260e-4189-a11b-0b8609ed3df0
+@clientID = de31d9d2-a8bf-4335-933f-26c14e11e287
+@clientSecret = btq8Q~cPt7UfSk0fkc2VZSnne8ZW2AnXf3wCgaXO
+@adUrl = https://login.microsoftonline.com/{{tenant}}/oauth2/token
+
+POST {{adUrl}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={{clientID}}
+&client_secret={{clientSecret}}
+&resource={{appUrl}}
+
+### Add Employee
+
+@url = https://live360-ais-demo.azurewebsites.net/api/addemployee?code=3625l1oaRe2fdxXGfAMFDj4KUSbfvWTOj1RMmoY0t8nsAzFujpGxdQ%3D%3D
+
+POST {{url}}&first=Johnny&last=Rotten&salary=100,000
+
+### Call the API
+
+@authToken = {{oauth.response.body.access_token}}
+
+POST {{appUrl}}/api/data/v9.2/{{commandName}} HTTP/1.1
+Content-Type: application/json
+Accept: application/json  
+OData-MaxVersion: 4.0  
+OData-Version: 4.0
+If-None-Match: null
+Authorization: Bearer {{authToken}}
+
+{
+    "BackgroundCheckID": "301339d2-af80-ee11-8179-000d3a19aaea",
+    "IsSafeToHire": true
+}
