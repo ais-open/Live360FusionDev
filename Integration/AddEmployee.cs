@@ -36,7 +36,7 @@ public class AddEmployee
         
         if (string.IsNullOrEmpty(first) || string.IsNullOrEmpty(last) || !Decimal.TryParse(salary, out var salaryDecimal)) 
         {
-            throw new ArgumentException("'first','last' and 'salary' are required and salary must be a decimal");
+            return new BadRequestObjectResult("'first','last' and 'salary' are required and salary must be a decimal");
         }
 
         var connStr = Environment.GetEnvironmentVariable("AzureWebJobsStorage");
