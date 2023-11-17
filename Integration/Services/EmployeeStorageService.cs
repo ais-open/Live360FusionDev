@@ -7,7 +7,7 @@ namespace Live360.Integration.Services;
 public class EmployeeStorageService
 {
     const string EMPLOYEE_TABLE_NAME = "employees";
-    const string BACKGROUND_CHECK_TABLE_NAME = "background-checks";
+    const string BACKGROUND_CHECK_TABLE_NAME = "backgroundchecks";
 
     private readonly TableServiceClient _serviceClient;
 
